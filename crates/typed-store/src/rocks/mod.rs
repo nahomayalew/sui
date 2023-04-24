@@ -463,29 +463,29 @@ impl RocksDB {
 
     pub fn read_sampling_interval(&self) -> SamplingInterval {
         match self {
-            Self::DBWithThreadMode(d) => d.metric_conf.read_sample_interval.clone(),
-            Self::OptimisticTransactionDB(d) => d.metric_conf.read_sample_interval.clone(),
+            Self::DBWithThreadMode(d) => d.metric_conf.read_sample_interval.new_from_self(),
+            Self::OptimisticTransactionDB(d) => d.metric_conf.read_sample_interval.new_from_self(),
         }
     }
 
     pub fn write_sampling_interval(&self) -> SamplingInterval {
         match self {
-            Self::DBWithThreadMode(d) => d.metric_conf.write_sample_interval.clone(),
-            Self::OptimisticTransactionDB(d) => d.metric_conf.write_sample_interval.clone(),
+            Self::DBWithThreadMode(d) => d.metric_conf.write_sample_interval.new_from_self(),
+            Self::OptimisticTransactionDB(d) => d.metric_conf.write_sample_interval.new_from_self(),
         }
     }
 
     pub fn iter_latency_sampling_interval(&self) -> SamplingInterval {
         match self {
-            Self::DBWithThreadMode(d) => d.metric_conf.iter_latency_sample_interval.clone(),
-            Self::OptimisticTransactionDB(d) => d.metric_conf.iter_latency_sample_interval.clone(),
+            Self::DBWithThreadMode(d) => d.metric_conf.iter_latency_sample_interval.new_from_self(),
+            Self::OptimisticTransactionDB(d) => d.metric_conf.iter_latency_sample_interval.new_from_self(),
         }
     }
 
     pub fn iter_bytes_sampling_interval(&self) -> SamplingInterval {
         match self {
-            Self::DBWithThreadMode(d) => d.metric_conf.iter_bytes_sample_interval.clone(),
-            Self::OptimisticTransactionDB(d) => d.metric_conf.iter_bytes_sample_interval.clone(),
+            Self::DBWithThreadMode(d) => d.metric_conf.iter_bytes_sample_interval.new_from_self(),
+            Self::OptimisticTransactionDB(d) => d.metric_conf.iter_bytes_sample_interval.new_from_self(),
         }
     }
 

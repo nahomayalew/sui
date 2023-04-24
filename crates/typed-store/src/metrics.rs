@@ -61,6 +61,9 @@ impl SamplingInterval {
             counter,
         }
     }
+    pub fn new_from_self(&self) -> SamplingInterval {
+        SamplingInterval::new(self.once_every_duration, self.after_num_ops)
+    }
     pub fn sample(&self) -> bool {
         if self.once_every_duration.is_zero() {
             self.counter.fetch_add(1, Ordering::Relaxed) % (self.after_num_ops + 1) == 0
