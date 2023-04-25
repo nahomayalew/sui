@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1682385445658,
+  "lastUpdate": 1682386672579,
   "repoUrl": "https://github.com/MystenLabs/sui",
   "entries": {
     "Benchmark": [
@@ -35,6 +35,42 @@ window.BENCHMARK_DATA = {
             "name": "get_checkpoint",
             "value": 438364,
             "range": "± 27933",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "tmn@mystenlabs.com",
+            "name": "Todd Nowacki",
+            "username": "tnowacki"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "5ae26986425e1a55fa116fcee066285deb766137",
+          "message": "[sui verifier] Ban entry on init (#11287)\n\n## Description \r\n\r\n- No longer allow entry modifier on init\r\n- `entry` on `init` while not harmful, is a bit confusing as `init`\r\nfunctions are otherwise not callable. For cleanliness, we think it is\r\nimportant to keep it separated as one might expect `init` is only called\r\nonce\r\n- Thanks @otter-sec (https://osec.io/) for the report! \r\n\r\n## Test Plan \r\n\r\n- New tests\r\n\r\n---\r\nIf your changes are not user-facing and not a breaking change, you can\r\nskip the following section. Otherwise, please indicate what changed, and\r\nthen add to the Release Notes section as highlighted during the release\r\nprocess.\r\n\r\n### Type of Change (Check all that apply)\r\n\r\n- [ ] user-visible impact\r\n- [ ] breaking change for a client SDKs\r\n- [ ] breaking change for FNs (FN binary must upgrade)\r\n- [ ] breaking change for validators or node operators (must upgrade\r\nbinaries)\r\n- [ ] breaking change for on-chain data layout\r\n- [ ] necessitate either a data wipe or data migration\r\n\r\n### Release notes",
+          "timestamp": "2023-04-25T01:27:50Z",
+          "tree_id": "e0d74132bea954f8f2e5d4fcea3d4daa61e9d7ce",
+          "url": "https://github.com/MystenLabs/sui/commit/5ae26986425e1a55fa116fcee066285deb766137"
+        },
+        "date": 1682386668984,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "persist_checkpoint",
+            "value": 153416867,
+            "range": "± 4964212",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "get_checkpoint",
+            "value": 311504,
+            "range": "± 7640",
             "unit": "ns/iter"
           }
         ]
